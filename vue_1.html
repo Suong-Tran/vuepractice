@@ -38,9 +38,14 @@
 			1. Create an image and set the following attributes with Vue {src, alt, title}
 			2. Augment the span below to include another class called "highlight", which has a yellow border.
 		-->
-		<span v-bind:class="loadClass">
+		<span v-bind:class="{loadClass}">
 			look at me!
+			
 		</span>
+		<span>
+			<img v-bind:src="'http://sandbox.bittsdevelopment.com/code1/employeepics/1.jpg'" v-bind:alt="'Picture of Christine Gary'" v-bind:title="'Christine Gary is very cute'">
+		</span>
+	
 	</div>
 	
 	<script>
@@ -51,7 +56,7 @@
 			loadClass : 'container',
 			//newStyle : 'font-size:30px;',
 			//newAlt : 'dynamically set alt!'
-			
+			highlight : 'border: 5px dotted yellow;',
 		}
 	});
 	
