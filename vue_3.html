@@ -11,28 +11,35 @@
 	</head>
 	<body>
 	
-	<div id="app">
-		<span v-if="profile">
-			Profile of {{profile.fname}} {{profile.lname}} 
-		</span>
-		<span v-else>
-			No Profile Data found.
-		</span>
-	</div>
+		<div id="app">
+			<div v-if="profile">
+				<div class="container">
+					<h4 v-if="profile.fname" class="important">{{profile.fname}} {{profile.lname}}</h4>
+					<h4 v-else="profile.fname" class="important">{{defaultProfile.fname}}</h4>
+					<p v-if="profile.bio">{{profile.bio}}</p>
+					<p v-else="profile.bio">{{defaultProfile.bio}}</p>
+				</div>
+			</div>
+			<div v-else>
+				No Profile Data found.
+			</div>
+		</div>
 	
 	<script>
 	var app = new Vue({
 		el: '#app',
 		
 		data:{
-			/*
-			profile:{
-				fname: "John",
-				lname: "Doe"	
+			profile: {
+				fname: "Suong",
+				lname: "Tran",
+				bio: "Web Developer in Training",
+			},
+			defaultProfile: {
+				fname: "Name",
+				bio: "Bio",
 			}
-			*/
 		}
-		
 	});
 	</script>
 	

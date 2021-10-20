@@ -14,8 +14,18 @@
 	<div id="app">
 		<ul>
 			<li v-for="part in scene">
-				<span>{{part.character}}</span>
-				<p>{{part.dialogue}}</p>
+				<div v-if="part.character === 'MACBETH'">
+					<div style="color: blue">
+						<span>{{part.character}}</span>
+						<p v-for="verse in part.dialogue.split('\n')">{{verse}}</p>
+					</div>
+				</div>
+				<div v-else-if="part.character === 'LADY MACBETH'">
+					<div style="color: red">
+						<span>{{part.character}}</span>
+						<p v-for="verse in part.dialogue.split('\n')">{{verse}}</p>
+					</div>
+				</div>
 			</li>
 		</ul>
 	</div>

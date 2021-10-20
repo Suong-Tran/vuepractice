@@ -44,7 +44,7 @@
 			
 		</span>
 		<span>
-			<!-- <img v-bind:src="'http://sandbox.bittsdevelopment.com/code1/employeepics/1.jpg'" v-bind:alt="'Picture of Christine Gary'" v-bind:title="'Christine Gary is very cute'"> -->
+			<img v-bind:src="newSrc" v-bind:alt="newAlt" v-bind:style="newStyle">
 		</span>
 	
 	</div>
@@ -54,10 +54,10 @@
 		//Bind Vue object to HTML element through query selector
 		el: '#app',
 		data:{
-			loadClass : 'container',
-			highlight : 'highLight'
-			//newStyle : 'font-size:30px;',
-			//newAlt : 'dynamically set alt!'
+			loadClass : 'container highLight',
+			newStyle : 'font-size:30px;',
+			newAlt : 'dynamically set alt!',
+			newSrc : 'http://sandbox.bittsdevelopment.com/code1/employeepics/1.jpg'
 			
 		}
 	});

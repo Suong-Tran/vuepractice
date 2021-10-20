@@ -16,17 +16,19 @@
 			v-for="orb in orbs"
 			v-bind:radius="orb.radius"
 			v-bind:color="orb.color"
-			v-bind:key="orb.id">
+			v-bind:key="orb.id"
+			v-bind:x="orb.id * 80"
+			v-bind:y="orb.id * 80">>
 		</orb>
 	</div>
 	
 	<script>
 	Vue.component('orb',{
-		props:['radius','color'],	
+		props:['radius','color','x','y'],	
 		template:
 		`<span 
 			v-bind:class="'circle'" 
-			v-bind:style="{'width':radius+'px', 'height':radius+'px', 'background':color}"
+			v-bind:style="{'width':radius+'px', 'height':radius+'px', 'background':color, 'position':'absolute', 'left': x + 'px', 'top': y + 'px'}"
 			v-on:click="prompt();">
 		</span>`,
 		methods:{
